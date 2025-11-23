@@ -10,56 +10,57 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <img
           src={heroBg}
           alt="AI Neural Network Background"
-          className="w-full h-full object-cover opacity-30"
+          className="w-full h-full object-cover opacity-20"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/50 via-background/80 to-background"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/90 to-background"></div>
+        {/* Animated gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-tr from-primary/5 via-transparent to-accent/5"></div>
       </div>
 
       {/* Content */}
-      <div className="container mx-auto px-4 py-20 relative z-10">
-        <div className="max-w-5xl mx-auto text-center animate-fade-in">
+      <div className="container mx-auto px-4 py-24 md:py-32 relative z-10">
+        <div className="max-w-5xl mx-auto text-center">
           {/* Profile Image */}
-          <div className="mb-8 inline-block">
+          <div className="mb-10 inline-block animate-fade-in">
             <div className="relative">
-              <div className="absolute inset-0 bg-primary/20 rounded-full blur-2xl"></div>
+              <div className="absolute inset-0 bg-primary/30 rounded-full blur-3xl animate-pulse"></div>
               <img
                 src={profileImg}
                 alt="AI Engineer"
-                className="relative w-32 h-32 md:w-40 md:h-40 rounded-full object-cover border-4 border-primary/50 mx-auto glow-primary"
+                className="relative w-36 h-36 md:w-48 md:h-48 rounded-full object-cover border-4 border-primary/40 mx-auto shadow-card-hover"
               />
             </div>
           </div>
 
           {/* Main Heading */}
-          <h1 className="text-5xl md:text-7xl font-bold font-heading mb-6 animate-slide-up">
-            Welcome to My{" "}
-            <span className="text-gradient-primary">AI Engineering</span>{" "}
-            Portfolio
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold font-heading mb-6 animate-slide-up leading-tight">
+            Transforming Ideas into{" "}
+            <span className="text-gradient-primary">Intelligent Solutions</span>
           </h1>
 
           {/* Subheading */}
-          <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto animate-slide-up">
-            Showcasing innovative AI projects that push the boundaries of technology
+          <p className="text-lg md:text-xl lg:text-2xl text-muted-foreground mb-10 max-w-3xl mx-auto animate-slide-up leading-relaxed" style={{ animationDelay: "0.1s" }}>
+            AI Engineer specialized in building cutting-edge machine learning systems
+            that solve real-world challenges
           </p>
 
           {/* Bio */}
-          <p className="text-base md:text-lg text-foreground/80 mb-12 max-w-2xl mx-auto leading-relaxed animate-slide-up">
-            I'm a passionate AI Engineer specializing in machine learning, deep learning,
-            and natural language processing. With years of experience building cutting-edge
-            AI solutions, I transform complex problems into intelligent, scalable systems.
+          <p className="text-base md:text-lg text-foreground/70 mb-12 max-w-2xl mx-auto leading-relaxed animate-slide-up" style={{ animationDelay: "0.2s" }}>
+            Expert in deep learning, natural language processing, and computer vision.
+            Passionate about pushing the boundaries of what's possible with artificial intelligence.
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-wrap gap-4 justify-center mb-12 animate-slide-up">
+          <div className="flex flex-wrap gap-4 justify-center mb-16 animate-slide-up" style={{ animationDelay: "0.3s" }}>
             <Button
               size="lg"
-              className="bg-primary hover:bg-primary/90 text-primary-foreground glow-primary transition-all"
+              className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg hover:shadow-xl hover:scale-105 transition-all px-8"
               onClick={() => scrollToSection("projects")}
             >
               View My Work
@@ -67,36 +68,36 @@ const Hero = () => {
             <Button
               size="lg"
               variant="outline"
-              className="border-primary text-primary hover:bg-primary/10"
+              className="border-2 border-primary/50 text-primary hover:bg-primary/10 hover:border-primary hover:scale-105 transition-all px-8"
               onClick={() => scrollToSection("contact")}
             >
-              Get In Touch
+              Let's Connect
             </Button>
           </div>
 
           {/* Social Links */}
-          <div className="flex gap-6 justify-center animate-slide-up">
+          <div className="flex gap-6 justify-center animate-slide-up" style={{ animationDelay: "0.4s" }}>
             <a
               href="https://github.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-primary transition-colors"
+              className="p-3 rounded-full bg-secondary/50 border border-border text-muted-foreground hover:text-primary hover:border-primary/50 hover:bg-secondary transition-all hover:scale-110"
             >
-              <Github className="w-6 h-6" />
+              <Github className="w-5 h-5" />
             </a>
             <a
               href="https://linkedin.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-primary transition-colors"
+              className="p-3 rounded-full bg-secondary/50 border border-border text-muted-foreground hover:text-primary hover:border-primary/50 hover:bg-secondary transition-all hover:scale-110"
             >
-              <Linkedin className="w-6 h-6" />
+              <Linkedin className="w-5 h-5" />
             </a>
             <a
               href="mailto:hello@example.com"
-              className="text-muted-foreground hover:text-primary transition-colors"
+              className="p-3 rounded-full bg-secondary/50 border border-border text-muted-foreground hover:text-primary hover:border-primary/50 hover:bg-secondary transition-all hover:scale-110"
             >
-              <Mail className="w-6 h-6" />
+              <Mail className="w-5 h-5" />
             </a>
           </div>
         </div>

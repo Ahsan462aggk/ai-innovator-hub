@@ -50,40 +50,40 @@ const projects = [
 
 const Projects = () => {
   return (
-    <section id="projects" className="py-20 px-4">
+    <section id="projects" className="py-24 md:py-32 px-4 bg-gradient-to-b from-background to-secondary/10">
       <div className="container mx-auto max-w-7xl">
-        <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-bold font-heading mb-4">
-            Explore My <span className="text-gradient-primary">Work</span>
+        <div className="text-center mb-20 animate-fade-in">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold font-heading mb-6">
+            Featured <span className="text-gradient-primary">Projects</span>
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            A collection of AI projects demonstrating expertise across machine learning,
-            deep learning, and cutting-edge AI technologies
+          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+            Showcasing AI solutions that combine innovation, technical excellence,
+            and real-world impact across diverse domains
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
             <Card
               key={index}
-              className="bg-card border-border hover:border-primary/50 transition-all duration-300 hover:glow-primary group animate-slide-up"
+              className="bg-card/80 backdrop-blur-sm border-border hover:border-primary/50 transition-all duration-300 group animate-slide-up shadow-card hover:shadow-card-hover"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <CardHeader>
-                <CardTitle className="font-heading group-hover:text-primary transition-colors">
+              <CardHeader className="pb-3">
+                <CardTitle className="font-heading text-xl group-hover:text-primary transition-colors">
                   {project.title}
                 </CardTitle>
-                <CardDescription className="text-muted-foreground">
+                <CardDescription className="text-muted-foreground leading-relaxed pt-2">
                   {project.description}
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <div className="flex flex-wrap gap-2 mb-4">
+                <div className="flex flex-wrap gap-2 mb-6">
                   {project.technologies.map((tech, i) => (
                     <Badge
                       key={i}
                       variant="secondary"
-                      className="bg-secondary text-secondary-foreground"
+                      className="bg-secondary/70 text-secondary-foreground border border-border/50 hover:bg-secondary transition-colors"
                     >
                       {tech}
                     </Badge>
@@ -93,29 +93,29 @@ const Projects = () => {
                   <Button
                     asChild
                     size="sm"
-                    className="flex-1 bg-primary hover:bg-primary/90"
+                    className="flex-1 bg-primary hover:bg-primary/90 shadow-md hover:shadow-lg hover:scale-105 transition-all"
                   >
                     <a
                       href={project.liveUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-2"
+                      className="flex items-center justify-center gap-2"
                     >
                       <ExternalLink className="w-4 h-4" />
-                      Live Demo
+                      Demo
                     </a>
                   </Button>
                   <Button
                     asChild
                     size="sm"
                     variant="outline"
-                    className="border-primary/50 text-primary hover:bg-primary/10"
+                    className="border-2 border-primary/40 text-primary hover:bg-primary/10 hover:border-primary hover:scale-105 transition-all"
                   >
                     <a
                       href={project.githubUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-2"
+                      className="flex items-center justify-center gap-2"
                     >
                       <Github className="w-4 h-4" />
                       Code

@@ -2,98 +2,48 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
-
 @layer base {
   :root {
-    --background: 220 18% 8%;
-    --foreground: 210 17% 98%;
+    /* Deep Space Dark Theme */
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
 
-    --card: 220 15% 11%;
-    --card-foreground: 210 17% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
 
-    --popover: 220 15% 11%;
-    --popover-foreground: 210 17% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
 
-    --primary: 200 98% 45%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 263.4 70% 50.4%;
+    --primary-foreground: 210 40% 98%;
 
-    --secondary: 220 14% 16%;
-    --secondary-foreground: 210 17% 98%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
 
-    --muted: 220 14% 16%;
-    --muted-foreground: 215 15% 60%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
 
-    --accent: 32 95% 58%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 190 90% 50%;
+    /* Cyan/Electric Blue */
+    --accent-foreground: 240 10% 3.9%;
 
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 210 17% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 220 14% 18%;
-    --input: 220 14% 18%;
-    --ring: 200 98% 45%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
 
-    --gradient-primary: linear-gradient(135deg, hsl(200 98% 45%), hsl(220 90% 58%));
-    --gradient-accent: linear-gradient(135deg, hsl(32 95% 58%), hsl(42 96% 60%));
-    --gradient-hero: linear-gradient(180deg, hsl(220 18% 8% / 0.4), hsl(220 18% 8% / 0.95));
-    --glow-primary: 0 0 60px hsl(200 98% 45% / 0.3);
-    --glow-accent: 0 0 40px hsl(32 95% 58% / 0.25);
-    --shadow-card: 0 4px 6px -1px hsl(220 18% 4% / 0.4), 0 2px 4px -2px hsl(220 18% 4% / 0.3);
-    --shadow-card-hover: 0 10px 15px -3px hsl(200 98% 45% / 0.2), 0 4px 6px -4px hsl(200 98% 45% / 0.15);
-    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(263.4 70% 50.4%), hsl(280 80% 60%));
+    --gradient-accent: linear-gradient(135deg, hsl(190 90% 50%), hsl(210 100% 60%));
+    --gradient-glass: linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
 
-    --sidebar-background: 220 15% 11%;
-    --sidebar-foreground: 210 17% 98%;
-    --sidebar-primary: 200 98% 45%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 220 14% 16%;
-    --sidebar-accent-foreground: 210 17% 98%;
-    --sidebar-border: 220 14% 18%;
-    --sidebar-ring: 200 98% 45%;
-  }
-
-  .dark {
-    --background: 222 47% 7%;
-    --foreground: 210 40% 98%;
-
-    --card: 222 40% 10%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222 40% 10%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 199 89% 48%;
-    --primary-foreground: 222 47% 7%;
-
-    --secondary: 217 33% 17%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217 33% 17%;
-    --muted-foreground: 215 20% 65%;
-
-    --accent: 28 80% 52%;
-    --accent-foreground: 222 47% 7%;
-
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217 33% 17%;
-    --input: 217 33% 17%;
-    --ring: 199 89% 48%;
-    
-    --sidebar-background: 222 40% 10%;
-    --sidebar-foreground: 210 40% 98%;
-    --sidebar-primary: 199 89% 48%;
-    --sidebar-primary-foreground: 222 47% 7%;
-    --sidebar-accent: 217 33% 17%;
-    --sidebar-accent-foreground: 210 40% 98%;
-    --sidebar-border: 217 33% 17%;
-    --sidebar-ring: 199 89% 48%;
+    /* Glows */
+    --glow-primary: 0 0 40px -10px hsl(263.4 70% 50.4% / 0.5);
+    --glow-accent: 0 0 40px -10px hsl(190 90% 50% / 0.5);
   }
 }
 
@@ -105,19 +55,28 @@ All colors MUST be HSL.
   body {
     @apply bg-background text-foreground;
     font-family: 'Inter', sans-serif;
-    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    background-image:
+      radial-gradient(circle at 50% 0%, hsl(263 70% 50% / 0.15), transparent 40%),
+      radial-gradient(circle at 0% 50%, hsl(190 90% 50% / 0.1), transparent 40%);
+    background-attachment: fixed;
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-family: 'Space Grotesk', sans-serif;
-    font-weight: 600;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.03em;
   }
 }
 
 @layer utilities {
+  .glass-panel {
+    @apply bg-black/40 backdrop-blur-xl border border-white/10 shadow-xl;
+  }
+
   .text-gradient-primary {
     background: var(--gradient-primary);
     -webkit-background-clip: text;
@@ -132,67 +91,130 @@ All colors MUST be HSL.
     background-clip: text;
   }
 
-  .glow-primary {
-    box-shadow: var(--glow-primary);
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
   }
 
-  .glow-accent {
-    box-shadow: var(--glow-accent);
-  }
+  @keyframes float {
 
-  .shadow-card {
-    box-shadow: var(--shadow-card);
-  }
-
-  .shadow-card-hover {
-    box-shadow: var(--shadow-card-hover);
-  }
-
-  .animate-fade-in {
-    animation: fadeIn 0.8s ease-out;
-  }
-
-  .animate-slide-up {
-    animation: slideUp 0.8s ease-out;
-  }
-
-  .animate-slide-down {
-    animation: slideDown 0.6s ease-out;
-  }
-
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-
-  @keyframes slideUp {
-    from {
-      opacity: 0;
-      transform: translateY(30px);
-    }
-    to {
-      opacity: 1;
+    0%,
+    100% {
       transform: translateY(0);
     }
-  }
 
-  @keyframes slideDown {
-    from {
-      opacity: 0;
+    50% {
       transform: translateY(-20px);
     }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
   }
 
-  .backdrop-blur-glass {
-    backdrop-filter: blur(12px) saturate(180%);
-    -webkit-backdrop-filter: blur(12px) saturate(180%);
+  /* Professional Resume Print Styles */
+  @media print {
+    @page {
+      margin: 0;
+      /* Set to 0 to hide browser headers (date, URL, etc.) */
+      size: A4;
+    }
+
+    body {
+      background: white !important;
+      color: black !important;
+      font-family: 'Inter', sans-serif !important;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+      margin: 1.5cm !important;
+      /* Move margin here to keep content professional */
+    }
+
+    /* Remove web-only effects */
+    .no-print,
+    .print\:hidden,
+    [class*="blur-"],
+    [class*="animate-"] {
+      display: none !important;
+    }
+
+    /* Reset background colors for clarity */
+    .bg-\[\#030014\],
+    .bg-white\/5,
+    .bg-black\/40 {
+      background: white !important;
+    }
+
+    /* Resume Container */
+    main {
+      padding: 0 !important;
+      margin: 0 !important;
+      max-width: 100% !important;
+    }
+
+    .border-white\/10 {
+      border-color: #eee !important;
+    }
+
+    /* Typography */
+    h1 {
+      font-size: 2.5rem !important;
+      color: black !important;
+      margin-bottom: 0.5rem !important;
+    }
+
+    h2 {
+      font-size: 1.25rem !important;
+      color: #7c3aed !important;
+    }
+
+    /* Primary color for role */
+    h3 {
+      color: #7c3aed !important;
+      border-bottom: 1px solid #7c3aed !important;
+      padding-bottom: 2px !important;
+    }
+
+    p,
+    span,
+    div {
+      color: #333 !important;
+    }
+
+    /* Layout preservation */
+    .grid {
+      display: grid !important;
+      grid-template-columns: repeat(12, minmax(0, 1fr)) !important;
+      gap: 2rem !important;
+    }
+
+    .lg\:col-span-8 {
+      grid-column: span 8 / span 8 !important;
+    }
+
+    .lg\:col-span-4 {
+      grid-column: span 4 / span 4 !important;
+    }
+
+    /* Tags/Badges optimization */
+    .bg-primary\/10 {
+      background-color: transparent !important;
+      border: 1px solid #eee !important;
+      padding: 2px 6px !important;
+      color: #666 !important;
+      font-size: 9px !important;
+    }
+
+    .text-primary {
+      color: #7c3aed !important;
+    }
+
+    /* Icons */
+    .lucide {
+      stroke: #7c3aed !important;
+      width: 14px !important;
+      height: 14px !important;
+    }
+
+    /* Prevent breaking sections across pages */
+    section,
+    header {
+      break-inside: avoid !important;
+    }
   }
 }

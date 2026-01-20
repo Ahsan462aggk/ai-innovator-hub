@@ -4,46 +4,44 @@
 
 @layer base {
   :root {
-    /* Deep Space Dark Theme */
-    --background: 240 10% 3.9%;
-    --foreground: 0 0% 98%;
+    /* Professional Genius Theme (Light/Clean) */
+    --background: 0 0% 100%;
+    --foreground: 222 47% 11%;
 
-    --card: 240 10% 3.9%;
-    --card-foreground: 0 0% 98%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
 
-    --popover: 240 10% 3.9%;
-    --popover-foreground: 0 0% 98%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
 
-    --primary: 263.4 70% 50.4%;
+    --primary: 221 83% 53%;
+    /* Intellectual Blue */
     --primary-foreground: 210 40% 98%;
 
-    --secondary: 240 3.7% 15.9%;
-    --secondary-foreground: 0 0% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222 47% 11.2%;
 
-    --muted: 240 3.7% 15.9%;
-    --muted-foreground: 240 5% 64.9%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215 16% 47%;
 
-    --accent: 190 90% 50%;
-    /* Cyan/Electric Blue */
-    --accent-foreground: 240 10% 3.9%;
+    --accent: 262 80% 50%;
+    /* Deep Purple Accent */
+    --accent-foreground: 210 40% 98%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
 
-    --border: 240 3.7% 15.9%;
-    --input: 240 3.7% 15.9%;
-    --ring: 240 4.9% 83.9%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 221 83% 53%;
 
     --radius: 0.75rem;
 
-    /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(263.4 70% 50.4%), hsl(280 80% 60%));
-    --gradient-accent: linear-gradient(135deg, hsl(190 90% 50%), hsl(210 100% 60%));
-    --gradient-glass: linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
-
-    /* Glows */
-    --glow-primary: 0 0 40px -10px hsl(263.4 70% 50.4% / 0.5);
-    --glow-accent: 0 0 40px -10px hsl(190 90% 50% / 0.5);
+    /* Professional Gradients */
+    --gradient-hero: radial-gradient(circle at 50% -20%, hsl(221 83% 53% / 0.1), transparent 70%),
+      radial-gradient(circle at 100% 50%, hsl(262 80% 50% / 0.05), transparent 50%);
+    --gradient-glass: linear-gradient(135deg, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.3) 100%);
+    --border-glass: linear-gradient(135deg, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.2) 100%);
   }
 }
 
@@ -53,11 +51,9 @@
   }
 
   body {
-    @apply bg-background text-foreground;
-    font-family: 'Inter', sans-serif;
-    background-image:
-      radial-gradient(circle at 50% 0%, hsl(263 70% 50% / 0.15), transparent 40%),
-      radial-gradient(circle at 0% 50%, hsl(190 90% 50% / 0.1), transparent 40%);
+    @apply bg-background text-foreground antialiased selection:bg-primary/30;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background-image: var(--gradient-hero);
     background-attachment: fixed;
   }
 
@@ -68,31 +64,28 @@
   h5,
   h6 {
     font-family: 'Space Grotesk', sans-serif;
-    letter-spacing: -0.03em;
+    @apply tracking-tight font-bold;
   }
 }
 
 @layer utilities {
-  .glass-panel {
-    @apply bg-black/40 backdrop-blur-xl border border-white/10 shadow-xl;
+  .glass-card {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
   }
 
-  .text-gradient-primary {
-    background: var(--gradient-primary);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+  .glass-morphism {
+    @apply bg-white/70 backdrop-blur-xl border border-black/5 shadow-xl;
   }
 
-  .text-gradient-accent {
-    background: var(--gradient-accent);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+  .text-glow {
+    text-shadow: 0 0 20px hsl(var(--primary) / 0.2);
   }
 
   .animate-float {
-    animation: float 6s ease-in-out infinite;
+    animation: float 8s ease-in-out infinite;
   }
 
   @keyframes float {
@@ -103,118 +96,159 @@
     }
 
     50% {
-      transform: translateY(-20px);
+      transform: translateY(-10px);
     }
   }
 
-  /* Professional Resume Print Styles */
-  @media print {
-    @page {
-      margin: 0;
-      /* Set to 0 to hide browser headers (date, URL, etc.) */
-      size: A4;
-    }
+  /* Clean Professional Grid Background */
+  .bg-grid-slate-100 {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='32' height='32' fill='none' stroke='rgb(241 245 249)'%3E%3Cpath d='M0 .5H31.5V32'/%3E%3C/svg%3E");
+  }
 
-    body {
-      background: white !important;
-      color: black !important;
-      font-family: 'Inter', sans-serif !important;
-      -webkit-print-color-adjust: exact !important;
-      print-color-adjust: exact !important;
-      margin: 1.5cm !important;
-      /* Move margin here to keep content professional */
-    }
+  .tech-border {
+    position: relative;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    background: white;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.02);
+  }
 
-    /* Remove web-only effects */
-    .no-print,
-    .print\:hidden,
-    [class*="blur-"],
-    [class*="animate-"] {
-      display: none !important;
-    }
+  .tech-border::before,
+  .tech-border::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-color: hsl(var(--primary));
+    border-style: solid;
+    transition: all 0.3s ease;
+  }
 
-    /* Reset background colors for clarity */
-    .bg-\[\#030014\],
-    .bg-white\/5,
-    .bg-black\/40 {
-      background: white !important;
-    }
+  .tech-border::before {
+    top: -1px;
+    left: -1px;
+    border-width: 2px 0 0 2px;
+  }
 
-    /* Resume Container */
-    main {
-      padding: 0 !important;
-      margin: 0 !important;
-      max-width: 100% !important;
-    }
+  .tech-border::after {
+    bottom: -1px;
+    right: -1px;
+    border-width: 0 2px 2px 0;
+  }
 
-    .border-white\/10 {
-      border-color: #eee !important;
-    }
+  .tech-border:hover::before,
+  .tech-border:hover::after {
+    width: 100%;
+    height: 100%;
+  }
+}
 
-    /* Typography */
-    h1 {
-      font-size: 2.5rem !important;
-      color: black !important;
-      margin-bottom: 0.5rem !important;
-    }
+/* Professional Resume Print Styles */
+@media print {
+  @page {
+    margin: 0;
+    /* Set to 0 to hide browser headers (date, URL, etc.) */
+    size: A4;
+  }
 
-    h2 {
-      font-size: 1.25rem !important;
-      color: #7c3aed !important;
-    }
+  body {
+    background: white !important;
+    color: black !important;
+    font-family: 'Inter', sans-serif !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    margin: 1.5cm !important;
+    /* Move margin here to keep content professional */
+  }
 
-    /* Primary color for role */
-    h3 {
-      color: #7c3aed !important;
-      border-bottom: 1px solid #7c3aed !important;
-      padding-bottom: 2px !important;
-    }
+  /* Remove web-only effects */
+  .no-print,
+  .print\:hidden,
+  [class*="blur-"],
+  [class*="animate-"] {
+    display: none !important;
+  }
 
-    p,
-    span,
-    div {
-      color: #333 !important;
-    }
+  /* Reset background colors for clarity */
+  .bg-\[\#030014\],
+  .bg-white\/5,
+  .bg-black\/40 {
+    background: white !important;
+  }
 
-    /* Layout preservation */
-    .grid {
-      display: grid !important;
-      grid-template-columns: repeat(12, minmax(0, 1fr)) !important;
-      gap: 2rem !important;
-    }
+  /* Resume Container */
+  main {
+    padding: 0 !important;
+    margin: 0 !important;
+    max-width: 100% !important;
+  }
 
-    .lg\:col-span-8 {
-      grid-column: span 8 / span 8 !important;
-    }
+  .border-white\/10 {
+    border-color: #eee !important;
+  }
 
-    .lg\:col-span-4 {
-      grid-column: span 4 / span 4 !important;
-    }
+  /* Typography */
+  h1 {
+    font-size: 2.5rem !important;
+    color: black !important;
+    margin-bottom: 0.5rem !important;
+  }
 
-    /* Tags/Badges optimization */
-    .bg-primary\/10 {
-      background-color: transparent !important;
-      border: 1px solid #eee !important;
-      padding: 2px 6px !important;
-      color: #666 !important;
-      font-size: 9px !important;
-    }
+  h2 {
+    font-size: 1.25rem !important;
+    color: #7c3aed !important;
+  }
 
-    .text-primary {
-      color: #7c3aed !important;
-    }
+  /* Primary color for role */
+  h3 {
+    color: #7c3aed !important;
+    border-bottom: 1px solid #7c3aed !important;
+    padding-bottom: 2px !important;
+  }
 
-    /* Icons */
-    .lucide {
-      stroke: #7c3aed !important;
-      width: 14px !important;
-      height: 14px !important;
-    }
+  p,
+  span,
+  div {
+    color: #333 !important;
+  }
 
-    /* Prevent breaking sections across pages */
-    section,
-    header {
-      break-inside: avoid !important;
-    }
+  /* Layout preservation */
+  .grid {
+    display: grid !important;
+    grid-template-columns: repeat(12, minmax(0, 1fr)) !important;
+    gap: 2rem !important;
+  }
+
+  .lg\:col-span-8 {
+    grid-column: span 8 / span 8 !important;
+  }
+
+  .lg\:col-span-4 {
+    grid-column: span 4 / span 4 !important;
+  }
+
+  /* Tags/Badges optimization */
+  .bg-primary\/10 {
+    background-color: transparent !important;
+    border: 1px solid #eee !important;
+    padding: 2px 6px !important;
+    color: #666 !important;
+    font-size: 9px !important;
+  }
+
+  .text-primary {
+    color: #7c3aed !important;
+  }
+
+  /* Icons */
+  .lucide {
+    stroke: #7c3aed !important;
+    width: 14px !important;
+    height: 14px !important;
+  }
+
+  /* Prevent breaking sections across pages */
+  section,
+  header {
+    break-inside: avoid !important;
   }
 }

@@ -2,46 +2,38 @@ import { Github, Linkedin, Mail, Heart } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="border-t border-border/50 bg-secondary/20 py-12 px-4">
-      <div className="container mx-auto max-w-7xl">
-        <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-          <div className="flex flex-col items-center md:items-start gap-2">
-            <div className="text-xl font-bold font-heading">
-              AI<span className="text-gradient-primary">Engineer</span>
+    <footer className="py-20 px-6 border-t border-slate-200 bg-slate-50">
+      <div className="container mx-auto">
+        <div className="flex flex-col md:flex-row justify-between items-center gap-10">
+          <div className="space-y-4 text-center md:text-left">
+            <div className="text-xl font-bold tracking-tighter text-foreground">
+              AHSAN<span className="text-muted-foreground font-light">GILL</span>
             </div>
-            <div className="text-muted-foreground text-sm">
-              © {new Date().getFullYear()} All rights reserved.
-            </div>
+            <p className="text-xs uppercase tracking-widest text-muted-foreground/80 font-bold">
+              AI Engineer & Architect
+            </p>
           </div>
 
-          <div className="flex flex-col items-center gap-3">
-            <div className="text-sm text-muted-foreground flex items-center gap-2">
-              Built with <Heart className="w-4 h-4 text-accent fill-accent" /> and cutting-edge AI
-            </div>
-            <div className="flex gap-4">
+          <div className="flex items-center gap-8">
+            {[
+              { icon: <Linkedin className="w-5 h-5" />, href: "https://www.linkedin.com/in/ahsanaligill" },
+              { icon: <Github className="w-5 h-5" />, href: "https://github.com/Ahsan462aggk" },
+              { icon: <Mail className="w-5 h-5" />, href: "mailto:ahs462agk@gmail.com" }
+            ].map((social, i) => (
               <a
-                href="https://github.com"
+                key={i}
+                href={social.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 rounded-lg bg-secondary/50 border border-border text-muted-foreground hover:text-primary hover:border-primary/50 transition-all hover:scale-110"
+                className="text-muted-foreground hover:text-primary transition-colors"
               >
-                <Github className="w-5 h-5" />
+                {social.icon}
               </a>
-              <a
-                href="https://linkedin.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2 rounded-lg bg-secondary/50 border border-border text-muted-foreground hover:text-primary hover:border-primary/50 transition-all hover:scale-110"
-              >
-                <Linkedin className="w-5 h-5" />
-              </a>
-              <a
-                href="mailto:hello@example.com"
-                className="p-2 rounded-lg bg-secondary/50 border border-border text-muted-foreground hover:text-primary hover:border-primary/50 transition-all hover:scale-110"
-              >
-                <Mail className="w-5 h-5" />
-              </a>
-            </div>
+            ))}
+          </div>
+
+          <div className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
+            © {new Date().getFullYear()} Precision Built with AI
           </div>
         </div>
       </div>

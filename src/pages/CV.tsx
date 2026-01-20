@@ -99,14 +99,15 @@ const CV = () => {
     ];
 
     return (
-        <div className="min-h-screen bg-[#030014] text-white selection:bg-primary/30 font-sans">
+
+        <div className="min-h-screen bg-slate-50 text-foreground selection:bg-primary/10 font-sans">
             {/* Background Decor - Only for Web */}
             <div className="fixed inset-0 overflow-hidden pointer-events-none -z-10 no-print">
-                <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-primary/10 rounded-full blur-[120px] animate-pulse"></div>
+                <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-primary/5 rounded-full blur-[120px] animate-pulse"></div>
                 <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-accent/5 rounded-full blur-[120px] animate-pulse delay-700"></div>
             </div>
 
-            <nav className="sticky top-0 z-50 backdrop-blur-md border-b border-white/10 px-4 py-4 no-print print:hidden">
+            <nav className="sticky top-0 z-50 backdrop-blur-md border-b border-slate-200 bg-white/70 px-4 py-4 no-print print:hidden">
                 <div className="container mx-auto flex justify-between items-center max-w-5xl">
                     <Link
                         to="/"
@@ -126,18 +127,18 @@ const CV = () => {
             </nav>
 
             <main className="container mx-auto max-w-5xl px-4 py-8 md:py-16 print:py-0 print:px-0">
-                <div className="bg-white/5 border border-white/10 rounded-3xl p-8 md:p-12 shadow-2xl print:bg-white print:border-0 print:p-0 print:shadow-none print:text-black">
+                <div className="bg-white border border-slate-200 rounded-3xl p-8 md:p-12 shadow-2xl shadow-slate-200/50 print:bg-white print:border-0 print:p-0 print:shadow-none print:text-black">
 
                     {/* Professional Header */}
-                    <header className="flex flex-col md:flex-row justify-between items-start gap-8 border-b border-white/10 pb-10 mb-10 print:border-black/10 print:pb-6 print:mb-6">
+                    <header className="flex flex-col md:flex-row justify-between items-start gap-8 border-b border-slate-100 pb-10 mb-10 print:border-black/10 print:pb-6 print:mb-6">
                         <div className="space-y-4">
-                            <h1 className="text-5xl md:text-6xl font-black tracking-tight print:text-black print:text-4xl">
+                            <h1 className="text-5xl md:text-6xl font-black tracking-tight print:text-black print:text-4xl text-foreground">
                                 Ahsan Ali Gill
                             </h1>
                             <h2 className="text-2xl font-bold text-primary print:text-primary print:text-xl">
                                 AI & Generative AI Developer
                             </h2>
-                            <div className="flex flex-wrap gap-x-6 gap-y-2 text-white/60 text-sm font-medium print:text-black/70">
+                            <div className="flex flex-wrap gap-x-6 gap-y-2 text-muted-foreground text-sm font-medium print:text-black/70">
                                 <div className="flex items-center gap-1.5 cursor-default">
                                     <MapPin className="w-4 h-4 text-primary" />
                                     <span>Faisalabad, Pakistan</span>
@@ -159,10 +160,10 @@ const CV = () => {
 
                         {/* Avatar - High Quality Print Handling */}
                         <div className="relative shrink-0 no-print">
-                            <div className="w-32 h-32 rounded-2xl overflow-hidden border-2 border-primary/30 p-1">
+                            <div className="w-32 h-32 rounded-2xl overflow-hidden border-2 border-primary/10 p-1 bg-white shadow-lg">
                                 <img src={avatarPreview} alt="Ahsan Ali Gill" className="w-full h-full object-cover rounded-xl" />
                             </div>
-                            <div className="absolute -bottom-2 -right-2 bg-primary p-2 rounded-lg">
+                            <div className="absolute -bottom-2 -right-2 bg-primary p-2 rounded-lg shadow-md">
                                 <Sparkles className="w-3 h-3 text-white" />
                             </div>
                         </div>
@@ -179,8 +180,8 @@ const CV = () => {
                                     <Briefcase className="w-4 h-4" />
                                     Professional Summary
                                 </h3>
-                                <p className="text-white/70 leading-relaxed text-lg print:text-black/80 print:text-sm">
-                                    Certified developer specializing in <span className="text-white font-bold print:text-black">Retrieval-Augmented Generation (RAG)</span> and <span className="text-white font-bold print:text-black">AI Agents</span>.
+                                <p className="text-muted-foreground leading-relaxed text-lg print:text-black/80 print:text-sm">
+                                    Certified developer specializing in <span className="text-foreground font-bold print:text-black">Retrieval-Augmented Generation (RAG)</span> and <span className="text-foreground font-bold print:text-black">AI Agents</span>.
                                     Proven track record in building intelligent systems using LangChain, LangGraph, and MongoDB Vector Search.
                                     Experienced in creating immersive 3D AI interactions and optimizing production-grade ML pipelines.
                                 </p>
@@ -195,16 +196,16 @@ const CV = () => {
                                 <div className="space-y-8">
                                     <div className="flex justify-between items-start gap-4">
                                         <div className="space-y-1">
-                                            <h4 className="text-xl font-bold print:text-lg">AI Developer</h4>
+                                            <h4 className="text-xl font-bold print:text-lg text-foreground">AI Developer</h4>
                                             <p className="text-primary font-bold print:text-black/80">Techloset Solutions</p>
-                                            <ul className="text-white/60 text-sm list-disc pl-4 space-y-1 mt-2 print:text-black/70 print:text-xs">
+                                            <ul className="text-muted-foreground/80 text-sm list-disc pl-4 space-y-1 mt-2 print:text-black/70 print:text-xs">
                                                 <li>Developed and optimized AI models and Generative AI applications using LangChain and FastAPI.</li>
                                                 <li>Implemented RAG (Retrieval-Augmented Generation) pipelines for intelligent data retrieval.</li>
                                                 <li>Collaborated with cross-functional teams to deploy scalable AI agents in production environments.</li>
                                             </ul>
                                         </div>
                                         <div className="text-right shrink-0">
-                                            <span className="text-sm font-bold text-white/40 print:text-black/40">1 Year</span>
+                                            <span className="text-sm font-bold text-muted-foreground print:text-black/40">1 Year</span>
                                         </div>
                                     </div>
                                 </div>
@@ -220,10 +221,10 @@ const CV = () => {
                                     {projects.map((proj, i) => (
                                         <div key={i} className="group relative">
                                             <div className="flex justify-between items-start mb-2 font-bold">
-                                                <h4 className="text-xl print:text-lg">{proj.title}</h4>
+                                                <h4 className="text-xl print:text-lg text-foreground">{proj.title}</h4>
                                                 <Badge variant="outline" className="border-primary/30 text-primary print:hidden">Project</Badge>
                                             </div>
-                                            <p className="text-white/60 text-sm mb-4 leading-relaxed print:text-black/70 print:text-xs">
+                                            <p className="text-muted-foreground text-sm mb-4 leading-relaxed print:text-black/70 print:text-xs">
                                                 {proj.description}
                                             </p>
                                             <div className="flex flex-wrap gap-2">
@@ -247,22 +248,22 @@ const CV = () => {
                                 <div className="space-y-8">
                                     <div className="flex justify-between items-start gap-4">
                                         <div className="space-y-1">
-                                            <h4 className="text-xl font-bold print:text-lg">BS Artificial Intelligence</h4>
+                                            <h4 className="text-xl font-bold print:text-lg text-foreground">BS Artificial Intelligence</h4>
                                             <p className="text-primary font-bold print:text-black/80">The University of Faisalabad</p>
-                                            <p className="text-white/50 text-sm print:text-black/60">CGPA: 3.02 / 4.00 (Major in Machine Learning & AI)</p>
+                                            <p className="text-muted-foreground/80 text-sm print:text-black/60">CGPA: 3.02 / 4.00 (Major in Machine Learning & AI)</p>
                                         </div>
                                         <div className="text-right shrink-0">
-                                            <span className="text-sm font-bold text-white/40 print:text-black/40">2023 - 2027</span>
+                                            <span className="text-sm font-bold text-muted-foreground print:text-black/40">2023 - 2027</span>
                                         </div>
                                     </div>
                                     <div className="flex justify-between items-start gap-4">
                                         <div className="space-y-1">
-                                            <h4 className="text-xl font-bold print:text-lg">AI Specialization</h4>
+                                            <h4 className="text-xl font-bold print:text-lg text-foreground">AI Specialization</h4>
                                             <p className="text-primary font-bold print:text-black/80">PIAIC</p>
-                                            <p className="text-white/50 text-sm print:text-black/60">Cloud Native Computing & Generative AI</p>
+                                            <p className="text-muted-foreground/80 text-sm print:text-black/60">Cloud Native Computing & Generative AI</p>
                                         </div>
                                         <div className="text-right shrink-0">
-                                            <span className="text-sm font-bold text-white/40 print:text-black/40">Ongoing</span>
+                                            <span className="text-sm font-bold text-muted-foreground print:text-black/40">Ongoing</span>
                                         </div>
                                     </div>
                                 </div>
@@ -281,10 +282,10 @@ const CV = () => {
                                 <div className="space-y-8">
                                     {skillGroups.map((group, idx) => (
                                         <div key={idx} className="space-y-3">
-                                            <h4 className="text-xs font-bold text-white/40 uppercase tracking-widest print:text-black/40">{group.category}</h4>
+                                            <h4 className="text-xs font-bold text-muted-foreground uppercase tracking-widest print:text-black/40">{group.category}</h4>
                                             <div className="flex flex-wrap gap-2">
                                                 {group.skills.map((skill, i) => (
-                                                    <Badge key={i} variant="outline" className="bg-white/5 border-white/10 text-white/70 print:bg-transparent print:border-black/20 print:text-black/80 print:text-[10px]">
+                                                    <Badge key={i} variant="outline" className="bg-slate-50 border-slate-200 text-muted-foreground print:bg-transparent print:border-black/20 print:text-black/80 print:text-[10px]">
                                                         {skill}
                                                     </Badge>
                                                 ))}
@@ -303,10 +304,10 @@ const CV = () => {
                                 <div className="space-y-4">
                                     {certifications.map((cert, i) => (
                                         <div key={i} className="group cursor-default">
-                                            <h4 className="text-sm font-bold text-white group-hover:text-primary transition-colors print:text-black print:text-xs">
+                                            <h4 className="text-sm font-bold text-foreground group-hover:text-primary transition-colors print:text-black print:text-xs">
                                                 {cert.title}
                                             </h4>
-                                            <p className="text-[10px] text-white/40 print:text-black/50">{cert.issuer} • {cert.date}</p>
+                                            <p className="text-[10px] text-muted-foreground print:text-black/50">{cert.issuer} • {cert.date}</p>
                                         </div>
                                     ))}
                                 </div>
@@ -317,7 +318,7 @@ const CV = () => {
             </main>
 
             <footer className="py-12 px-4 text-center no-print">
-                <p className="text-white/20 text-[10px] font-black uppercase tracking-[0.4em]">
+                <p className="text-muted-foreground/30 text-[10px] font-black uppercase tracking-[0.4em]">
                     System Architected by Ahsan Ali Gill
                 </p>
             </footer>
